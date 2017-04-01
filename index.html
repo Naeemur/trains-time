@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="theme-color" content="#F9BF3B">
+	<meta name="trainstime-api-key" content="{{api_key}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Train's Time</title>
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection">
+	<link type="text/css" rel="stylesheet" href="css/index.css"  media="screen,projection">
+	<script>var api_key = '{{api_key}}';</script>
+</head>
+<body>
+	<div class="container">
+		<h1>Train's Time App</h1>
+		<h3>Comming Soon!</h3>
+		<div class="carousel" id="trains">
+			<!--<h4 class="carousel-item">Dhumketu Ex.</h4>
+			<h4 class="carousel-item">Sundarban Ex.</h4>
+			<h4 class="carousel-item">Ekota Ex.</h4>-->
+			<div class="carousel-btn prev"><img src="img/prev.svg" title="Previous train"></div>
+			<div class="carousel-btn next"><img src="img/next.svg" title="Next tain"></div>
+		</div>
+		
+		<div class="timer">
+			<h1><!--<b id="hour">00</b><sub>hours</sub><b id="min">00</b><sub>minutes</sub>--></h1>
+			<h3>Late</h3>
+		</div>
+		
+		<div class="details">
+			<h5>Official departure time</h5>
+			<time id="offi"><!--12:34 <sub>PM</sub>--></time>
+			<h5>Presumed departure time</h5>
+			<time id="pres"><!--14:24 <sub>PM</sub>--></time>
+		</div>
+    </div>
+	<footer class="page-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">About Developers</h5>
+					<p class="grey-text text-lighten-4">Created &amp; maintained by Naeem and Sadia. Currently under development.</p>
+					<p class="grey-text text-lighten-4">This app is built on Express JS. Uses jQuery and Materialize for the UI.</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text">Profile</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" target="_blank" href="https://www.github.com/naeemur">Naeem</a></li>
+						<li><a class="grey-text text-lighten-3" target="_blank" href="https://www.github.com/sadiahosn">Sadia</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				&copy; 2017, Naeem &amp; Sadia
+				<a class="grey-text text-lighten-4 right" href="https://www.github.com/naeemur/trains-time" target="_blank">Github Repo</a>
+			</div>
+		</div>
+	</footer>
+	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg file="arrow-circle-angle-left.svg" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <g>
+    <path d="M8,0a8,8,0,1,0,8,8A8,8,0,0,0,8,0ZM8,14.5A6.5,6.5,0,1,1,14.5,8,6.5,6.5,0,0,1,8,14.5Z"/>
+    <polygon points="9.04 3.54 4.59 8 9.04 12.46 10.46 11.04 7.41 8 10.46 4.96 9.04 3.54"/>
+  </g>
+</svg>

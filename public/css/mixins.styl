@@ -1,0 +1,199 @@
+// vendor(prop, args)
+// 	-webkit-{prop}: args
+// 	-moz-{prop}: args
+// 	-o-{prop}: args
+// 	{prop}: args
+	
+// tansition()
+// 	vendor('tansition', arguments)
+
+// transform()
+// 	vendor('transform', arguments)
+	
+// animation()
+// 	vendor('animation', arguments)
+
+@keyframes rippleanim
+	0%
+		opacity 0
+		transform translateY(-50%) scale(.1)
+	50%
+		opacity .3
+	100% 
+		opacity 0
+		transform translateY(-50%) scale(1)
+	
+@keyframes animicon
+	0%
+		transform rotate(0deg)
+	100%
+		transform rotate(360deg)
+	
+
+clearfix()
+	&::before
+	&::after
+		content ""
+		display table
+	&::after
+		clear both
+	zoom 1
+	
+ellipsis(nw = true)
+	if nw
+		white-space nowrap
+	overflow hidden
+	text-overflow ellipsis
+  
+hide-text()
+	text-indent 101%
+	white-space nowrap
+	overflow hidden
+	
+replace-text(image, x=50%, y=50%)
+	hide-text()
+	background-image image
+	background-repeat no-repeat
+	background-position x y
+	
+outer-line(col)
+	text-shadow -1px -1px 0 col, 1px -1px 0 col, -1px 1px 0 col, 1px 1px 0 col
+	
+inner-line(col, t = 0, l = 0, b = t, r = l, unt = 0px, per = 1)
+	box-shadow 0px sum(unt t/per) 0px 0px col inset, 0px sum(unt - b/per) 0px 0px col inset, sum(unt l/per) 0px 0px 0px col inset, sum(unt - r/per) 0px 0px 0px col inset
+
+PO(p=auto,d=block)
+	position p
+	display d
+
+PA(d=block)
+	PO(absolute,d)
+
+PR(d=block)
+	PO(relative,d)
+
+PF(d=block)
+	PO(fixed,d)
+
+FC(f=inherit,c=f)
+	fill f
+	color c
+
+FT(s=inherit,w=inherit)
+	font-size s
+	font-weight w
+
+WH(w=auto,h=w)
+	width w
+	height h
+
+WHF(s)
+	width s
+	height s
+	font-size s
+
+TL(t=0,l=t)
+	top t
+	left l
+	
+BL(b=0,l=b)
+	bottom b
+	left l
+	
+TR(t=0,r=t)
+	top t
+	right r
+	
+BR(b=0,r=b)
+	bottom b
+	right r
+	
+USN()
+	-webkit-user-select none
+	user-select none
+	
+ripple(d=.5s,p=relative,o=hidden,s=2)
+	w = s*100%
+	l = ((100 - s*100) / 2)%
+	position p
+	overflow o
+	transition opacity .3s ease
+	&::after 
+		PA()
+		WH(w,0)
+		TL(50%,l)
+		USN()
+		content ''
+		padding-bottom w
+		background #aaa
+		border-radius 50%
+		opacity 0
+		transform translateY(-50%) scale(.05)
+		// animation-play-state paused
+		// animation-iteration-count 0
+		// z-index -100
+		/*transition: transform .5s ease, opacity .9s ease .3s;*/
+		animation none
+	&.ripple::after
+		animation rippleanim d ease backwards
+		// animation-iteration-count 1
+		// animation-play-state running
+	&.disabled
+		opacity .3
+
+ripple-icon()
+	ripple(.5s,relative,visible,2.5)
+
+ripple-trigger(sel,d=.5s)
+	&.ripple {sel}::after
+		animation rippleanim d ease backwards
+	&.disabled {sel}
+		opacity .3
+		// ripple-dismiss('.ic')
+		// &::after
+		// 	display none
+		// 	animation none
+
+ripple-dismiss(sel)
+	// & {sel}::after
+	// 	animation none
+	&.ripple {sel}::after
+		animation none
+		
+middle(w,h=w)
+	position absolute
+	WH(w,h)
+	TL(50%)
+	margin-top sum(h/2 - h)
+	margin-left sum(w/2 - w)
+	
+flatten()
+	margin 0
+	padding 0
+	border 0
+	border-radius 0
+	outline none
+	box-shadow none
+	text-decoration none
+	
+absol(t=auto,l=auto,b=auto,r=auto,w=auto,h=auto,z=auto)
+	position absolute
+	z-index z
+	TL(t,l)
+	BR(b,r)
+	WH(w,h)
+	
+head-mask(name='chrome',com=xor)
+	if(com == xor)
+		l = '../assets/tab_'+name+'-left-xor.svg'
+		r = '../assets/tab_'+name+'-right-xor.svg'
+	else
+		l = '../assets/tab_'+name+'-left.svg'
+		r = '../assets/tab_'+name+'-right.svg'
+	-webkit-mask-image: url(l), url(r), url(../assets/tab-bg-body.png);
+	-webkit-mask-repeat: no-repeat, no-repeat, repeat;
+	-webkit-mask-position: left, right, center;
+	-webkit-mask-composite: com, com, source-over;
+	// -webkit-mask-clip: content
+	// -webkit-mask-origin: content
+	// -webkit-mask-attachment: fixed

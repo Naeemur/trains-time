@@ -1,0 +1,141 @@
+@-moz-keyframes rippleanim {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.1);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) scale(1);
+  }
+}
+@-webkit-keyframes rippleanim {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.1);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) scale(1);
+  }
+}
+@-o-keyframes rippleanim {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.1);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) scale(1);
+  }
+}
+@keyframes rippleanim {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.1);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) scale(1);
+  }
+}
+@-moz-keyframes animicon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes animicon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes animicon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animicon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+html {
+  font-family: sans-serif;
+  background: #eee;
+}
+.carousel .carousel-item {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+.carousel-btn {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 50%;
+  left: 50%;
+  margin-top: -16px;
+  margin-left: -16px;
+  left: auto;
+  right: auto;
+  background: transparent;
+  text-align: center;
+  cursor: pointer;
+  transform: translateY(-16px);
+}
+.carousel-btn svg,
+.carousel-btn img {
+  width: 32px;
+  height: 32px;
+}
+.carousel-btn.prev {
+  left: 32px;
+}
+.carousel-btn.next {
+  right: 32px;
+}
+.timer {
+  padding-bottom: 30px;
+}
+.timer h1 {
+  font-size: 100px;
+  text-align: center;
+  margin: 0;
+}
+.timer h1 sub {
+  font-size: 16px;
+}
+.timer h3 {
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+}
+.details time {
+  font-size: 64px;
+}
+.details time sub {
+  font-size: 16px;
+}

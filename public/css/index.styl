@@ -1,0 +1,40 @@
+@import 'mixins'
+
+html
+	font-family sans-serif
+	background #eee
+.carousel .carousel-item
+	WH(100%,50px)
+	text-align center
+.carousel-btn
+	w = 32px
+	middle(w)
+	left auto
+	right auto
+	background transparent
+	text-align center
+	cursor pointer
+	transform translateY(-16px)
+	& svg, & img
+		WH(w)
+	&.prev
+		left w
+	&.next
+		right w
+.timer
+	padding-bottom 30px
+	& h1
+		font-size 100px
+		text-align center
+		margin 0
+		& sub
+			font-size 16px
+	& h3
+		font-size 20px
+		text-align center
+		margin 0
+.details
+	& time
+		font-size 64px
+		& sub
+			font-size 16px
