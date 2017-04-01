@@ -12,7 +12,7 @@ $(document).ready(function () {
 			h = (pres/100)-(offi/100);
 			m = (pres%100)-(offi%100);
 		}
-		return '<b id="hour">'+Math.round(h)+'</b><sub>hours</sub><b id="min">'+Math.round(m)+'</b><sub>minutes</sub>';
+		return '<b id="hour">'+Math.ceil(h)+'</b><sub>hours</sub><b id="min">'+Math.round(m)+'</b><sub>minutes</sub>';
 	}
 	let trainSwap = function (name) {
 		setTimeout(function () {
